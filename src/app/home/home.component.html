@@ -1,7 +1,7 @@
 <mat-grid-list cols="2" rowHeight="280px" class="mat-position">
       <mat-grid-tile *ngFor="let element of collection | keyvalue">
         <mat-card  class="card">
-          <span  (click)="algo()">
+          <span   (click)="routerTo(element)">
             <div class="image-container">
               <img mat-card-image class="d-flex justify-content-center" src={{element.value.image}} alt={{element.value.name}}>
             </div>
@@ -14,7 +14,7 @@
               </mat-card-content>
             </span>
             <mat-card-actions>
-              <p (click)="openPopUpWindow(element.key)">Más información</p>
+              <p class="information d-flex flex-row-reverse" (click)="openPopUpWindow(element.key)">Más información</p>
             </mat-card-actions>
         </mat-card>
       </mat-grid-tile>

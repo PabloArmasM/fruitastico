@@ -2,6 +2,7 @@ import { Component, OnInit, Inject } from '@angular/core';
 import { HttpService } from '../http.service';
 import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog';
 import {MatRadioModule} from '@angular/material/radio';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-home',
@@ -12,16 +13,22 @@ export class HomeComponent implements OnInit {
 
   collection : any;
 
-  constructor(private http : HttpService, private dialog: MatDialog) { }
+  constructor(private http : HttpService, private dialog: MatDialog, private route: Router ) { }
 
   ngOnInit() {
     this.http.getData("fruit").subscribe(res =>{
       this.collection = res;
     });
   }
-  algo(){
-    console.log("ola");
+
+
+  routerTo(element){
+
+    this.route.navigate(['object/', JSON.stringify(element)]);
+    console.log(element);
   }
+
+
   openPopUpWindow(idElement){
     console.log(idElement);
     const dialogRef = this.dialog.open(FruitDialog, {

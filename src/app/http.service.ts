@@ -20,4 +20,8 @@ export class HttpService {
   getData(firebaseCollection){
     return this.http.post<any>(this.uri+'/getFruitCollection', JSON.stringify({collection : firebaseCollection}), httpOptions);
   }
+
+  getSpecificElement(firebaseCollection, _id){
+    return this.http.post<any>(this.uri+'/getSpecificElement', JSON.stringify({collection : firebaseCollection, _id: _id}), httpOptions);
+  }
 }
