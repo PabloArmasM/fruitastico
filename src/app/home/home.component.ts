@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { HttpService } from '../http.service';
+import {MatCardModule} from '@angular/material/card';
 
 @Component({
   selector: 'app-home',
@@ -7,9 +9,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
-  constructor() { }
+  collection : any;
+
+  constructor(private http : HttpService) { }
 
   ngOnInit() {
+    this.http.getData("fruit").subscribe(res =>{
+      this.collection = res;
+    });
   }
 
 }
