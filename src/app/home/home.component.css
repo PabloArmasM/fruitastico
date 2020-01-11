@@ -1,9 +1,30 @@
 .card {
   max-width: 400px;
+  height: 275px;
   margin-top: 1%;
   margin-bottom: 1%;
 }
 
-.image{
-  background-size: cover;
+.mat-card-image{
+  width: 100%;
+  margin: auto;
+}
+
+.mat-position{
+  margin-top: 2%;
+}
+
+.card-content {
+
+}
+
+.image-container{
+  width: 150px;
+  height: 125px;
+}
+
+.card-content-dialog{
+  overflow: auto;
+  display: block;
+  height: 150px;
 }

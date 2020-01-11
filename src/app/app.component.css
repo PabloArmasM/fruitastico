@@ -4,4 +4,10 @@
 
 #content{
   height: 100%;
+  background: #ede7e6;
+  padding: 0;
+}
+
+.footer{
+  margin-top: 15%;
 }
