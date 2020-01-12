@@ -22,6 +22,8 @@ export class HttpService {
   }
 
   getSpecificElement(firebaseCollection, _id){
+    console.log(firebaseCollection);
+    console.log(_id);
     return this.http.post<any>(this.uri+'/getSpecificElement', JSON.stringify({collection : firebaseCollection, _id: _id}), httpOptions);
   }
 }

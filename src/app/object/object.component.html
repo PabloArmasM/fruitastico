@@ -12,14 +12,14 @@
       <button type="button" class="btn btn-secondary change-quantity-button" (click)="modifyQuantity(-1)">-</button>
       <input [formControl]="quantity" type="number">
       <button type="button" class="btn btn-success change-quantity-button" (click)="modifyQuantity(1)">+</button>
-      <button type="button" class="btn btn-primary btn-sm add-election-button">
+      <button type="button" class="btn btn-primary btn-sm add-election-button" (click)="addProduct()">
         Añadir
         <mat-icon class="icon-add">add_shopping_cart</mat-icon>
       </button>
     </div>
 
   </div>
-  <div class="container-text text-left">
+  <div *ngIf="semaphore" class="container-text text-left">
     <p>{{productDescription.format}}</p>
     <p>{{productDescription.origin}}</p>
     <p>{{productDescription.cropType}}</p>

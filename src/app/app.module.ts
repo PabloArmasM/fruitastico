@@ -32,7 +32,7 @@ import { ObjectComponent } from './object/object.component';
     MatGridListModule,
     MatDialogModule,
     ReactiveFormsModule,
-    MatIconModule
+    MatIconModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

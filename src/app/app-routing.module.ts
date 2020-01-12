@@ -7,6 +7,10 @@ import { ObjectComponent } from './object/object.component';
 const routes: Routes = [
   {
     path: "",
+    redirectTo: "/home",
+    pathMatch: "full"
+  },{
+    path: "home",
     component: HomeComponent,
     pathMatch: "full"
   },{

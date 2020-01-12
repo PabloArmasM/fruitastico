@@ -1,7 +1,12 @@
 <div id="content">
 
 <nav class="navbar navbar-light" style="background-color: #cc3;">
-  <h3><a href="" style="color: #6c6c50;">Fruitastico</a></h3>
+  <h3><a routerLink="/home" style="color: #6c6c50;">Fruitastico</a></h3>
+
+  <p>
+    <ng-container *ngIf="quantity > 0">+{{quantity}}</ng-container>
+    <mat-icon>add_shopping_cart</mat-icon>
+  </p>
 </nav>
 
 <router-outlet></router-outlet>
