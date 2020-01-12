@@ -10,6 +10,7 @@ import {MatTableModule} from '@angular/material/table';
 import { AngularFireModule } from '@angular/fire';
 import { AngularFireAuthModule } from '@angular/fire/auth';
 import { environment } from '../environments/environment';
+import {MatMenuModule} from '@angular/material/menu';
 
 
 import { AppRoutingModule } from './app-routing.module';
@@ -22,6 +23,8 @@ import { ObjectComponent } from './object/object.component';
 import { BuyCenterComponent } from './buy-center/buy-center.component';
 import { CardDialog } from './buy-center/buy-center.component';
 import { RegisterComponent } from './register/register.component';
+import { SigninDialog } from './app.component';
+
 
 
 @NgModule({
@@ -32,7 +35,8 @@ import { RegisterComponent } from './register/register.component';
     ObjectComponent,
     BuyCenterComponent,
     CardDialog,
-    RegisterComponent
+    RegisterComponent,
+    SigninDialog
   ],
   imports: [
     BrowserModule,
@@ -47,13 +51,15 @@ import { RegisterComponent } from './register/register.component';
     MatIconModule,
     MatTableModule,
     AngularFireModule.initializeApp(environment.firebase, 'fruitastico'),
-    AngularFireAuthModule
+    AngularFireAuthModule,
+    MatMenuModule
   ],
   providers: [],
   bootstrap: [AppComponent],
   entryComponents: [
     FruitDialog,
-    CardDialog
+    CardDialog,
+    SigninDialog
   ]
 })
 export class AppModule { }

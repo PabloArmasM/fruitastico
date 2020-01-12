@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, AfterViewInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { HttpService } from '../http.service';
 import { FirebaseService } from '../firebase.service';
@@ -37,6 +37,20 @@ export class RegisterComponent implements OnInit {
     });
   }
 
+  ngAfterViewInit(){
+    debugger;
+    var userData = this.firebase.getUserData();
+    if(Object.entries(userData).length > 0){
+      this.registerForm.patchValue({
+        email : userData["email"],
+        fullName : userData["fullName"]
+      });
+      this.userUid = userData["_id"];
+      this.itsCreate = true;
+    }
+
+  }
+
   saveUser(){
     debugger;
     if(!this.itsCreate){
@@ -56,6 +70,7 @@ export class RegisterComponent implements OnInit {
        });
      }
   }
+
 
   printData(_id, fullName, email){
     this.itsCreate = true;

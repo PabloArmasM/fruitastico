@@ -4,6 +4,9 @@
   <h3><a routerLink="/home" style="color: #6c6c50;">Fruitastico</a></h3>
 
   <p>
+    <button *ngIf="!activeUser" type="button" class="btn btn-link" (click)="openPopUpWindow()">Entrar</button>
+    <button *ngIf="activeUser" type="button" class="btn btn-link" (click)="closeSession()">Salir</button>
+
     <ng-container *ngIf="quantity > 0">+{{quantity}}</ng-container>
     <mat-icon routerLink="/buyCenter">add_shopping_cart</mat-icon>
   </p>

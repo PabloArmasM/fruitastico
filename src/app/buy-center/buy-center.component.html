@@ -1,5 +1,5 @@
 
-  <div class="user-status">
+  <div *ngIf="!activeUser" class="user-status">
     <button type="button" class="btn btn-secondary" name="button">Iniciar sesión</button>
     <button type="button" class="btn btn-secondary" name="button" routerLink="/register">Registrarse</button>
   </div>

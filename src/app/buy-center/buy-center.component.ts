@@ -2,6 +2,7 @@ import { Component, OnInit, Inject } from '@angular/core';
 import { ShoppingCartService } from '../shopping-cart.service';
 import {MatTableModule} from '@angular/material/table';
 import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog';
+import { FirebaseService } from '../firebase.service';
 
 
 @Component({
@@ -16,12 +17,14 @@ export class BuyCenterComponent implements OnInit {
   quantity = [];
   totalPrice : number;
   totalQuantity:number;
+  activeUser = false;
 
-  constructor(private dialog: MatDialog) { }
+  constructor(private dialog: MatDialog, private firebase: FirebaseService) { }
 
   ngOnInit() {
     this.productList = ShoppingCartService.getProducts();
     this.calculateTotal();
+    this.activeUser = this.firebase.existUser();
   }
 
   calculateTotal(){

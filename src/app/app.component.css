@@ -1,3 +1,5 @@
+@import '~@angular/material/prebuilt-themes/deeppurple-amber.css';
+
 #sticky-footer {
   flex-shrink: none;
 }
@@ -10,4 +12,12 @@
 
 .footer{
   margin-top: 15%;
+}
+
+.google-img{
+  width: 10%;
+}
+
+.p-fast{
+  color:grey;
 }

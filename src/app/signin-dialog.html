@@ -1,0 +1,30 @@
+<div class="text-center">
+  <button type="button" class="btn btn-link" routerLink="/register" (click)="dialogRef.close();">Registrarse</button>
+</div>
+
+<form  [formGroup]="loginForm" (ngSubmit)="signIn()">
+  <div class="d-flex flex-column">
+    <div class="p-2">
+      <label>Email</label>
+      <input class="form-control" type="email" formControlName="email" placeholder="Email" ngModel>
+    </div>
+    <div class="p-2">
+      <label>Contraseña</label>
+      <input class="form-control" type="password" formControlName="password" ngModel>
+    </div>
+    <div class="p-2 text-center">
+      <button type="submit"   class="btn btn-dark" name="button">Iniciar sesión</button>
+    </div>
+  </div>
+</form>
+
+<div class="fast-access">
+  <div class="d-flex flex-column text-center">
+    <div class="p-2">
+      <p class="p-fast">Acceso rápido</p>
+    </div>
+    <div class="p-2">
+      <img src="https://avatars0.githubusercontent.com/u/1342004?s=400&v=4" class="google-img" (click)="googleSignUp()">
+    </div>
+  </div>
+</div>
