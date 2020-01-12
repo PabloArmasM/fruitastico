@@ -6,6 +6,7 @@ import {MatGridListModule} from '@angular/material/grid-list';
 import {MatDialogModule} from '@angular/material/dialog';
 import { ReactiveFormsModule } from '@angular/forms';
 import {MatIconModule} from '@angular/material/icon';
+import {MatTableModule} from '@angular/material/table';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -35,6 +36,7 @@ import { BuyCenterComponent } from './buy-center/buy-center.component';
     MatDialogModule,
     ReactiveFormsModule,
     MatIconModule,
+    MatTableModule
   ],
   providers: [],
   bootstrap: [AppComponent],

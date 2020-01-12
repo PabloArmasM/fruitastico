@@ -44,7 +44,8 @@ export class ObjectComponent implements OnInit {
       var product = {
         _id : this._id,
         name : this.productBase.name,
-        quantity : this.quantity.value
+        quantity : this.quantity.value,
+        price : this.productBase.price
       };
       ShoppingCartService.addProduct(product);
     }
