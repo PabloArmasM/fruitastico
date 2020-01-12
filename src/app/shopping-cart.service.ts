@@ -20,9 +20,14 @@ export class ShoppingCartService {
   static productList : Product[];
 
   static addProduct(product: Product){
-    console.log(product);
-
-    this.productList.push(product);
+    debugger;
+    var saveProduct = this.productList.find(saveProduct => saveProduct._id === product._id);
+    if(saveProduct === undefined)
+      this.productList.push(product);
+    else{
+      var index = this.productList.indexOf(saveProduct);
+      this.productList[index].quantity = this.productList[index].quantity + product.quantity;
+    }
     this.productList$.next(this.productList);
   }
 

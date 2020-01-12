@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { HomeComponent } from './home/home.component';
 import { ObjectComponent } from './object/object.component';
+import { BuyCenterComponent } from './buy-center/buy-center.component';
 
 
 const routes: Routes = [
@@ -16,6 +17,10 @@ const routes: Routes = [
   },{
     path: "object/:id",
     component: ObjectComponent,
+  },{
+    path: "buyCenter",
+    component: BuyCenterComponent,
+    pathMatch: "full"
   }
 ];
 

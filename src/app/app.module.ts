@@ -14,13 +14,15 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { HomeComponent } from './home/home.component';
 import { FruitDialog } from './home/home.component';
 import { ObjectComponent } from './object/object.component';
+import { BuyCenterComponent } from './buy-center/buy-center.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     FruitDialog,
-    ObjectComponent
+    ObjectComponent,
+    BuyCenterComponent
   ],
   imports: [
     BrowserModule,
