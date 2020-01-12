@@ -1,0 +1,9 @@
+.register-container{
+  margin: 5% 10% 0 10%;
+}
+
+
+.p-2 > button{
+  height: 40px;
+  width: 200px;
+}

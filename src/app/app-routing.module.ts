@@ -3,6 +3,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { HomeComponent } from './home/home.component';
 import { ObjectComponent } from './object/object.component';
 import { BuyCenterComponent } from './buy-center/buy-center.component';
+import { RegisterComponent } from './register/register.component';
 
 
 const routes: Routes = [
@@ -20,6 +21,10 @@ const routes: Routes = [
   },{
     path: "buyCenter",
     component: BuyCenterComponent,
+    pathMatch: "full"
+  },{
+    path: "register",
+    component: RegisterComponent,
     pathMatch: "full"
   }
 ];

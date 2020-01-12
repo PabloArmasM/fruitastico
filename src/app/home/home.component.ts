@@ -25,12 +25,10 @@ export class HomeComponent implements OnInit {
   routerTo(element){
 
     this.route.navigate(['object/', JSON.stringify(element)]);
-    console.log(element);
   }
 
 
   openPopUpWindow(idElement){
-    console.log(idElement);
     const dialogRef = this.dialog.open(FruitDialog, {
       width: '400px',
       data: this.collection[idElement]

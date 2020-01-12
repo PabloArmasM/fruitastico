@@ -7,9 +7,12 @@ mat-header-cell {
   margin: 0 10% 0 10%;
 }
 
+mat-footer-row{
+  font-weight: bold;
+}
 
 .table-container {
-  height: 400px;
+  height: 300px;
   overflow: auto;
   margin-right: 10%;
   margin-left: 10%;
@@ -18,4 +21,37 @@ mat-header-cell {
 
 table {
   width: 100%;
+}
+
+
+.subtract{
+  color: grey;
+  font-weight: 400;
+  font-size: 120%;
+}
+
+.add{
+  color: green;
+  font-weight: 400;
+  font-size: 120%;
+}
+
+.button-buy-center{
+  width: 175px;
+  height: 40px;
+  margin-right: 10%;
+  margin-top: 2%;
+}
+
+.user-status{
+  width: 400px;
+  padding-bottom: 1%;
+  margin: auto;
+  border-bottom: 1px solid grey;
+}
+
+.user-status > button{
+  width: 400px;
+  height: 40px;
+  margin-top: 2%;
 }

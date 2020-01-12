@@ -16,6 +16,9 @@ import { HomeComponent } from './home/home.component';
 import { FruitDialog } from './home/home.component';
 import { ObjectComponent } from './object/object.component';
 import { BuyCenterComponent } from './buy-center/buy-center.component';
+import { CardDialog } from './buy-center/buy-center.component';
+import { RegisterComponent } from './register/register.component';
+
 
 @NgModule({
   declarations: [
@@ -23,7 +26,9 @@ import { BuyCenterComponent } from './buy-center/buy-center.component';
     HomeComponent,
     FruitDialog,
     ObjectComponent,
-    BuyCenterComponent
+    BuyCenterComponent,
+    CardDialog,
+    RegisterComponent
   ],
   imports: [
     BrowserModule,
@@ -41,7 +46,8 @@ import { BuyCenterComponent } from './buy-center/buy-center.component';
   providers: [],
   bootstrap: [AppComponent],
   entryComponents: [
-    FruitDialog
+    FruitDialog,
+    CardDialog
   ]
 })
 export class AppModule { }

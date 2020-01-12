@@ -1,0 +1,55 @@
+
+
+<div class="register-container">
+  <form  [formGroup]="registerForm">
+    <div class="d-flex flex-column">
+      <div class="p-2">
+        <label>Usuario</label>
+        <input class="form-control" type="text" formControlName="user" placeholder="Usuario" ngModel>
+      </div>
+      <div class="p-2">
+        <label>Email</label>
+        <input class="form-control" type="email" formControlName="email" placeholder="Email" ngModel>
+      </div>
+      <div class="p-2">
+        <label>Contraseña</label>
+        <input class="form-control" type="password" formControlName="password" ngModel>
+      </div>
+      <div class="p-2">
+        <label>Nombre y apellidos</label>
+        <input class="form-control" type="text" formControlName="fullName" placeholder="Nombre y apellidos" ngModel>
+      </div>
+      <div class="p-2">
+        <label>Dirección postal</label>
+        <input class="form-control" type="number" formControlName="postalAdd" placeholder="Dirección postal" ngModel>
+      </div>
+      <div class="p-2">
+        <label>Calle</label>
+        <input class="form-control" type="text" formControlName="street" placeholder="Calle" ngModel>
+      </div>
+      <div class="p-2">
+        <label>Ciudad</label>
+        <input class="form-control" type="text" formControlName="city" placeholder="Ciudad" ngModel>
+      </div>
+      <div class="p-2">
+        <label>Provincia</label>
+        <input class="form-control" type="text" formControlName="province" placeholder="Provincia" ngModel>
+      </div>
+      <div class="p-2">
+        <label>Teléfono</label>
+        <input class="form-control" type="number" formControlName="telephone" placeholder="Teléfono" ngModel>
+      </div>
+      <div class="p-2">
+        <label>País</label>
+        <input class="form-control" type="country" formControlName="country" placeholder="País" ngModel>
+      </div>
+      <div class="p-2">
+        <label>NIF</label>
+        <input class="form-control" type="text" formControlName="idCard" placeholder="NIF" ngModel>
+      </div>
+      <div class="p-2 text-center">
+        <button type="button" class="btn btn-dark" name="button" (click)="saveUser()">Guardar</button>
+      </div>
+    </div>
+  </form>
+</div>

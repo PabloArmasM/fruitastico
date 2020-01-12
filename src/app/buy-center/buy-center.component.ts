@@ -1,6 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Inject } from '@angular/core';
 import { ShoppingCartService } from '../shopping-cart.service';
 import {MatTableModule} from '@angular/material/table';
+import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog';
+
 
 @Component({
   selector: 'app-buy-center',
@@ -15,7 +17,7 @@ export class BuyCenterComponent implements OnInit {
   totalPrice : number;
   totalQuantity:number;
 
-  constructor() { }
+  constructor(private dialog: MatDialog) { }
 
   ngOnInit() {
     this.productList = ShoppingCartService.getProducts();
@@ -34,7 +36,7 @@ export class BuyCenterComponent implements OnInit {
   modifyQuantity(_id, quantity){
     this.productList = this.productList.filter((value, key) =>{
       if(value._id == _id){
-        value.quantity = value.quantity + quantity == 0 ? 1 : value.quantity+quantity;
+        value.quantity = value.quantity + quantity < 1 ? 1 : value.quantity+quantity;
       }
       return true;
     });
@@ -59,6 +61,32 @@ export class BuyCenterComponent implements OnInit {
 
   getTotalQuantity(){
     return this.totalQuantity;
+  }
+
+  /*openPopUpWindow(){
+    const dialogRef = this.dialog.open(CardDialog, {
+      width: '400px',
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+    });
+  }*/
+
+}
+
+@Component({
+  selector: 'card-dialog',
+  templateUrl: 'card-dialog.html',
+  styleUrls: ['./buy-center.component.css']
+})
+export class CardDialog {
+
+  constructor(
+    public dialogRef: MatDialogRef<CardDialog>,
+    @Inject(MAT_DIALOG_DATA) public data: CardDialog) {}
+
+  onNoClick(): void {
+    this.dialogRef.close();
   }
 
 }
