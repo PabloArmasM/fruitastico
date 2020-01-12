@@ -1,7 +1,7 @@
 
 
 <div class="register-container">
-  <form  [formGroup]="registerForm">
+  <form  [formGroup]="registerForm" (ngSubmit)="saveUser()">
     <div class="d-flex flex-column">
       <div class="p-2">
         <label>Usuario</label>
@@ -48,7 +48,7 @@
         <input class="form-control" type="text" formControlName="idCard" placeholder="NIF" ngModel>
       </div>
       <div class="p-2 text-center">
-        <button type="button" class="btn btn-dark" name="button" (click)="saveUser()">Guardar</button>
+        <button type="submit"   class="btn btn-dark" name="button">Guardar</button>
       </div>
     </div>
   </form>

@@ -25,7 +25,7 @@ export class HttpService {
     return this.http.post<any>(this.uri+'/getSpecificElement', JSON.stringify({collection : firebaseCollection, _id: _id}), httpOptions);
   }
 
-  setNewUser(firebaseCollection, userData){
-    return this.http.post<any>(this.uri+'/setNewUser', JSON.stringify({collection : firebaseCollection, data: userData}), httpOptions);
+  setNewUser(firebaseCollection, _id, userData){
+    return this.http.post<any>(this.uri+'/setNewUser', JSON.stringify({collection : firebaseCollection, _id: _id, data: userData}), httpOptions);
   }
 }

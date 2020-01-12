@@ -7,6 +7,10 @@ import {MatDialogModule} from '@angular/material/dialog';
 import { ReactiveFormsModule } from '@angular/forms';
 import {MatIconModule} from '@angular/material/icon';
 import {MatTableModule} from '@angular/material/table';
+import { AngularFireModule } from '@angular/fire';
+import { AngularFireAuthModule } from '@angular/fire/auth';
+import { environment } from '../environments/environment';
+
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -41,7 +45,9 @@ import { RegisterComponent } from './register/register.component';
     MatDialogModule,
     ReactiveFormsModule,
     MatIconModule,
-    MatTableModule
+    MatTableModule,
+    AngularFireModule.initializeApp(environment.firebase, 'fruitastico'),
+    AngularFireAuthModule
   ],
   providers: [],
   bootstrap: [AppComponent],
