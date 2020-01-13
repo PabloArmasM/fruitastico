@@ -25,13 +25,19 @@ export class HttpService {
     return this.http.post<any>(this.uri+'/getSpecificElement', JSON.stringify({collection : firebaseCollection, _id: _id}), httpOptions);
   }
 
+  getGroupOfElements(firebaseCollection, _id){
+    return this.http.post<any>(this.uri+'/getGroupOfElements', JSON.stringify({collection : firebaseCollection, _id: _id}), httpOptions);
+  }
+
   setNewUser(firebaseCollection, _id, userData){
     return this.http.post<any>(this.uri+'/setNewUser', JSON.stringify({collection : firebaseCollection, _id: _id, data: userData}), httpOptions);
   }
 
-  setOrders(firebaseCollection, _id, orders){
-    this.http.post<any>(this.uri+'/setOrders', JSON.stringify({collection : firebaseCollection, _id: _id, data: orders}), httpOptions).subscribe(res=>{
+  setOrders(firebaseCollection, _id, email, orders){
+    this.http.post<any>(this.uri+'/setOrders', JSON.stringify({collection : firebaseCollection, _id: _id, email: email, data: orders}), httpOptions).subscribe(res=>{
       console.log(res);
     });
   }
+
+
 }

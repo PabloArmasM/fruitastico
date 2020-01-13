@@ -53,4 +53,8 @@ export class FirebaseService {
   existUser(){
     return (this.afAuth.auth.currentUser == null ? false : true);
   }
+
+  getUserEmail(){
+    return this.afAuth.auth.currentUser.email;
+  }
 }

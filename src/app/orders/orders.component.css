@@ -1,0 +1,13 @@
+.order-container{
+  margin: auto;
+  padding-top: 2%;
+  width: 300px;
+}
+
+.order-container > .row > .col {
+  border-bottom: black 1px solid;
+}
+
+.order-container > .row{
+  margin-bottom: 2%;
+}

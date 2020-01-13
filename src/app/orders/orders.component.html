@@ -1,1 +1,8 @@
-<p>orders works!</p>
+
+<div class="order-container text-center">
+  <div class="row d-flex justify-content-center" *ngFor="let element of orderList | keyvalue">
+    <div class="col"> {{element.key}}</div>
+    <div class="col"> {{element.value.date | date:'dd/MM/yy hh:mm'}}</div>
+    <div class="col"> {{element.value.finalPrice}} €</div>
+  </div>
+</div>

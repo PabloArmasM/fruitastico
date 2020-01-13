@@ -84,10 +84,13 @@ export class BuyCenterComponent implements OnInit {
       });
 
       dialogRef.afterClosed().subscribe(() =>{
-        this.http.setOrders("orders", this.firebase.getCurrentUser().uid, this.productList);
+        var data = {};
+        data['order'] = this.productList;
+        data['finalPrice'] = this.getTotalPrice();
+        data['date'] = new Date().getTime();
+        this.http.setOrders("orders", this.firebase.getCurrentUser().uid, this.firebase.getUserEmail(), data);
         this.router.navigate(['/orders']);
         this.deleteElement(-1);
-
       });
     }
   }
