@@ -3,6 +3,10 @@ import { ShoppingCartService } from '../shopping-cart.service';
 import {MatTableModule} from '@angular/material/table';
 import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog';
 import { FirebaseService } from '../firebase.service';
+import { interval } from 'rxjs';
+import { take } from 'rxjs/operators';
+import { Router } from '@angular/router';
+import { HttpService } from '../http.service';
 
 
 @Component({
@@ -19,7 +23,8 @@ export class BuyCenterComponent implements OnInit {
   totalQuantity:number;
   activeUser = false;
 
-  constructor(private dialog: MatDialog, private firebase: FirebaseService) { }
+  constructor(private dialog: MatDialog, private firebase: FirebaseService, private router : Router,
+    private http : HttpService) { }
 
   ngOnInit() {
     this.productList = ShoppingCartService.getProducts();
@@ -66,14 +71,26 @@ export class BuyCenterComponent implements OnInit {
     return this.totalQuantity;
   }
 
-  /*openPopUpWindow(){
-    const dialogRef = this.dialog.open(CardDialog, {
-      width: '400px',
-    });
+  openPopUpWindow(){
+    if(!this.activeUser){
+      confirm("Debe iniciar sesión para poder realizar el pedido");
+      return;
+    }
+    if(this.productList.length < 1){
+      confirm("No hay productos que comprar");
+    }else{
+      const dialogRef = this.dialog.open(CardDialog, {
+        width: '800px',
+      });
 
-    dialogRef.afterClosed().subscribe(result => {
-    });
-  }*/
+      dialogRef.afterClosed().subscribe(() =>{
+        this.http.setOrders("orders", this.firebase.getCurrentUser().uid, this.productList);
+        this.router.navigate(['/orders']);
+        this.deleteElement(-1);
+
+      });
+    }
+  }
 
 }
 
@@ -83,10 +100,30 @@ export class BuyCenterComponent implements OnInit {
   styleUrls: ['./buy-center.component.css']
 })
 export class CardDialog {
+  start = true;
+  message = "Procesando solicitud";
+
+  secondsCounter = interval(1000);
+  takeFourNumbers = this.secondsCounter.pipe(take(100));
+  counterSub : any;
 
   constructor(
     public dialogRef: MatDialogRef<CardDialog>,
     @Inject(MAT_DIALOG_DATA) public data: CardDialog) {}
+
+    cardProcessing(){
+      this.start = false;
+      this.counterSub = this.takeFourNumbers.subscribe(n =>{
+        if(n == 3)
+          this.message = "Solicitud aprobada";
+        if(n == 6)
+          this.message = "Realizando pago";
+        if(n == 8){
+          this.counterSub.unsubscribe();
+          this.dialogRef.close();
+        }
+      });
+    }
 
   onNoClick(): void {
     this.dialogRef.close();

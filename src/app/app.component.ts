@@ -46,7 +46,6 @@ export class AppComponent {
   closeSession(){
     this.activeUser = false;
     this.firebase.closeSession();
-    debugger;
     this.router.navigate(['/home']);
   }
 }

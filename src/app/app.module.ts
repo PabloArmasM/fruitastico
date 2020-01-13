@@ -24,6 +24,7 @@ import { BuyCenterComponent } from './buy-center/buy-center.component';
 import { CardDialog } from './buy-center/buy-center.component';
 import { RegisterComponent } from './register/register.component';
 import { SigninDialog } from './app.component';
+import { OrdersComponent } from './orders/orders.component';
 
 
 
@@ -36,7 +37,8 @@ import { SigninDialog } from './app.component';
     BuyCenterComponent,
     CardDialog,
     RegisterComponent,
-    SigninDialog
+    SigninDialog,
+    OrdersComponent
   ],
   imports: [
     BrowserModule,

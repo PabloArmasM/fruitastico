@@ -1,1 +1,27 @@
-<h1>Gestión tarjeta</h1>
+<div class="card-dialog-container" *ngIf="start">
+  <div class="row">
+      <div class="col">
+          <label>Número de tarjeta</label>
+          <br/>
+          <input type="number" class="card">
+      </div>
+  </div>
+  <div class="row">
+    <div class="col-6">
+        <label>Caducidad</label>
+        <br/>
+        <input type="text" class="small">
+    </div>
+    <div class="col-6">
+      <label>CCV</label>
+      <br/>
+      <input type="number" class="small">
+    </div>
+  </div>
+  <button type="button" class="btn btn-info" (click)="cardProcessing()">Aceptar</button>
+</div>
+
+<div class="text-center" *ngIf="!start">
+  <h6> {{message}} </h6>
+  <img class="gatete" src="https://i.giphy.com/media/u5eXlkXWkrITm/giphy.webp" alt="">
+</div>

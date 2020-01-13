@@ -55,3 +55,28 @@ table {
   height: 40px;
   margin-top: 2%;
 }
+
+.card{
+  width: 100%;
+}
+
+.card-dialog-container>.row>.col>label{
+  font-size: 80%;
+}
+
+.card-dialog-container>.row>.col-6>label{
+  font-size: 80%;
+}
+
+.small{
+  width: 50%;
+  border: black 1px solid;
+}
+
+.card-dialog-container>button{
+  margin-top: 2%;
+}
+
+.gatete{
+  width: 90%;
+}

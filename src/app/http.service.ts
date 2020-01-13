@@ -28,4 +28,10 @@ export class HttpService {
   setNewUser(firebaseCollection, _id, userData){
     return this.http.post<any>(this.uri+'/setNewUser', JSON.stringify({collection : firebaseCollection, _id: _id, data: userData}), httpOptions);
   }
+
+  setOrders(firebaseCollection, _id, orders){
+    this.http.post<any>(this.uri+'/setOrders', JSON.stringify({collection : firebaseCollection, _id: _id, data: orders}), httpOptions).subscribe(res=>{
+      console.log(res);
+    });
+  }
 }

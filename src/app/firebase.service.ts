@@ -51,7 +51,6 @@ export class FirebaseService {
   }
 
   existUser(){
-    debugger;
     return (this.afAuth.auth.currentUser == null ? false : true);
   }
 }

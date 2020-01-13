@@ -4,6 +4,7 @@ import { HomeComponent } from './home/home.component';
 import { ObjectComponent } from './object/object.component';
 import { BuyCenterComponent } from './buy-center/buy-center.component';
 import { RegisterComponent } from './register/register.component';
+import { OrdersComponent } from './orders/orders.component';
 
 
 const routes: Routes = [
@@ -25,6 +26,10 @@ const routes: Routes = [
   },{
     path: "register",
     component: RegisterComponent,
+    pathMatch: "full"
+  },{
+    path: "orders",
+    component: OrdersComponent,
     pathMatch: "full"
   }
 ];
